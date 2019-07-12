@@ -10,7 +10,8 @@ add_library( # 设置生成库的名称
              # 设置生成库的类型（SHARED 动态库，STATIC 静态库）
              SHARED
              # 指定源码的路径
-             src/main/cpp/src/com_afei_jnidemo_NativeLibrary.cpp)
+             src/main/cpp/src/com_afei_jnidemo_NativeLibrary.cpp
+             src/main/cpp/src/Register.cpp)
 
 # 查找预编译库，并将其保存到指定的变量名中
 find_library( # 变量名，可以自己随便取

@@ -18,19 +18,20 @@
 #endif
 
 #ifdef __ANDROID__
-#define TAG "SDK_JNI"
-#define CA_LOGD(format, ...) __android_log_print(ANDROID_LOG_DEBUG, TAG,\
+// TAG 可自定义
+#define TAG "JNI_Demo"
+#define LOGD(format, ...) __android_log_print(ANDROID_LOG_DEBUG, TAG,\
         "[%s][%s][%d]: " format, __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
-#define CA_LOGW(format, ...) __android_log_print(ANDROID_LOG_WARN, TAG,\
+#define LOGW(format, ...) __android_log_print(ANDROID_LOG_WARN, TAG,\
         "[%s][%s][%d]: " format, __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
-#define CA_LOGE(format, ...) __android_log_print(ANDROID_LOG_ERROR, TAG,\
+#define LOGE(format, ...) __android_log_print(ANDROID_LOG_ERROR, TAG,\
         "[%s][%s][%d]: " format, __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
-#define CA_LOGD(format, ...) printf("[%s][%s][%d]: " format "\n",\
+#define LOGD(format, ...) printf("[%s][%s][%d]: " format "\n",\
         __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
-#define CA_LOGW(format, ...) printf("[%s][%s][%d]: " format "\n",\
+#define LOGW(format, ...) printf("[%s][%s][%d]: " format "\n",\
         __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
-#define CA_LOGE(format, ...) printf("[%s][%s][%d]: " format "\n",\
+#define LOGE(format, ...) printf("[%s][%s][%d]: " format "\n",\
         __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
 #endif
 

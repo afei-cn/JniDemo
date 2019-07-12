@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "getDataFromNative: " + mDataBean);
                 break;
             case R.id.set_btn:
+                mDataBean.mInner.mMessage = "data from java";
                 Log.d(TAG, "transferDataToNative: " + mDataBean);
                 NativeLibrary.transferDataToNative(mDataBean);
                 break;
