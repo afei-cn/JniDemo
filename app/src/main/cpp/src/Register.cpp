@@ -61,7 +61,7 @@ void register_point_class(JNIEnv *env) {
 void register_inner_class(JNIEnv *env) {
     int ret = find_class(env, "com/afei/jnidemo/DataBean$Inner", &m_inner_block.clazz);
     if (ret != 0) {
-        LOGE("register_point_class failed");
+        LOGE("register_inner_class failed");
         return;
     }
     jclass clazz = m_inner_block.clazz;
@@ -74,7 +74,7 @@ void register_inner_class(JNIEnv *env) {
 void register_data_bean_class(JNIEnv *env) {
     int ret = find_class(env, "com/afei/jnidemo/DataBean", &m_data_bean_block.clazz);
     if (ret != 0) {
-        LOGE("register_point_class failed");
+        LOGE("register_data_bean_class  failed");
         return;
     }
     jclass clazz = m_data_bean_block.clazz;
