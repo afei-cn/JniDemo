@@ -4,14 +4,16 @@ cmake_minimum_required(VERSION 3.4.1)
 # 指定包含的头文件路径
 include_directories( src/main/cpp/inc )
 
+# 搜索自动目录下的所有源代码文件，并存储在 SRC_LIST 变量中
+aux_source_directory( src/main/cpp/src SRC_LIST )
+
 # 指定生成的库的名称、类型、源码
 add_library( # 设置生成库的名称
              native-lib
              # 设置生成库的类型（SHARED 动态库，STATIC 静态库）
              SHARED
              # 指定源码的路径
-             src/main/cpp/src/com_afei_jnidemo_NativeLibrary.cpp
-             src/main/cpp/src/Register.cpp)
+             ${SRC_LIST} )
 
 # 查找预编译库，并将其保存到指定的变量名中
 find_library( # 变量名，可以自己随便取

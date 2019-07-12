@@ -4,13 +4,7 @@
 #include <jni.h>
 #include "DataBean.h"
 
-typedef struct class_data_t {
-    const char *class_name; // 类名
-    const char *field_name; // 成员名
-    const char *field_type; // 成员类型
-    jfieldID *jfield; // 对应的 jfieldID
-} class_data;
-
+// 对应 android.graphics.Rect 类
 typedef struct rect_block_t {
     jclass clazz;
     jfieldID left;
@@ -20,6 +14,7 @@ typedef struct rect_block_t {
     jmethodID constructor;
 } rect_block;
 
+// 对应 android.graphics.PointF 类
 typedef struct point_block_t {
     jclass clazz;
     jfieldID x;
@@ -27,12 +22,14 @@ typedef struct point_block_t {
     jmethodID constructor;
 } point_block;
 
+// 对应 com.afei.jnidemo.DataBean$Inner 类
 typedef struct inner_block_t {
     jclass clazz;
     jfieldID message;
     jmethodID constructor;
 } inner_block;
 
+// 对应 com.afei.jnidemo.DataBean 类
 typedef struct data_bean_block_t {
     jclass clazz;
     jfieldID rect;
