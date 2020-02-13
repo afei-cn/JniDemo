@@ -6,7 +6,6 @@ public class NativeLibrary {
         System.loadLibrary("native-lib");
     }
 
-    public static native DataBean getDataFromNative();
+    public static native void test();
 
-    public static native void transferDataToNative(DataBean dataBean);
 }

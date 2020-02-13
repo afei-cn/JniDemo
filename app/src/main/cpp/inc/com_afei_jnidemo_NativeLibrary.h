@@ -23,6 +23,14 @@ JNIEXPORT jobject JNICALL Java_com_afei_jnidemo_NativeLibrary_getDataFromNative
 JNIEXPORT void JNICALL Java_com_afei_jnidemo_NativeLibrary_transferDataToNative
   (JNIEnv *, jclass, jobject);
 
+/*
+ * Class:     com_afei_jnidemo_NativeLibrary
+ * Method:    test
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_afei_jnidemo_NativeLibrary_test
+        (JNIEnv *, jclass);
+
 #ifdef __cplusplus
 }
 #endif

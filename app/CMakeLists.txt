@@ -2,10 +2,10 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 # 指定包含的头文件路径
-include_directories( src/main/cpp/inc )
+include_directories( src/main/cpp/inc src/main/cpp/inc/zdl)
 
 # 搜索自动目录下的所有源代码文件，并存储在 SRC_LIST 变量中
-aux_source_directory( src/main/cpp/src SRC_LIST )
+file(GLOB SRC_LIST "src/main/cpp/src/*.cpp")
 
 # 指定生成的库的名称、类型、源码
 add_library( # 设置生成库的名称
@@ -21,9 +21,14 @@ find_library( # 变量名，可以自己随便取
               # 预编译库的路径，默认搜索路径为 cmake 包含的系统库，因此如果是 NDK 的公共库只需要指定库的名称即可。
               log )
 
+set(link_list)
+list(APPEND link_list
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/libs/${ANDROID_ABI}/libst_snpe_isv.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/libs/${ANDROID_ABI}/libSNPE.so
+)
+
 # 指定目标库需要链接的其它库
 target_link_libraries( # 目标库名称
                        native-lib
-
-                       # 需要链接的库，log-lib 的值在上述 `find_library` 方法中指定
+                       ${link_list}
                        ${log-lib} )
